@@ -50,15 +50,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.button) {
-            if (editText.getText().toString().trim().isEmpty()) {
-                editText.requestFocus();
-                editText.setError("Veuillez saisi un nom !");
-                return;
+            if (!isEditTextEmpty()) {
+                addTextViewToDynamicLayout("Bienvenue " + editText.getText().toString());
+                editText.setText("");
             }
-
-            addTextViewToDynamicLayout("Bienvenue " + editText.getText().toString());
-            editText.setText("");
         }
+    }
+
+    private boolean isEditTextEmpty() {
+        if (editText.getText().toString().trim().isEmpty()) {
+            editText.requestFocus();
+            editText.setError("Veuillez saisi un nom !");
+            return true;
+        }
+        return false;
     }
 
     private void addTextViewToDynamicLayout(String str) {
