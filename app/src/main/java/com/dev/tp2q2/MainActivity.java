@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private EditText editText;
     private Button button;
-    TextView tmpTextView;
+    private TextView tmpTextView;
     private LinearLayout dynamicLayout;
     private ArrayList<String> textViewNames;
 
@@ -71,7 +71,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tmpTextView.setTextColor(Color.BLACK);
         tmpTextView.setTextSize(16);
         tmpTextView.setText(str);
-        textViewNames.add(tmpTextView.getText().toString());
         dynamicLayout.addView(tmpTextView);
+        // Si on enlève cette instrcution de cette méthode et on l'ajoute après l'appel d'addTextViewToDynamicLayout dans la méthode OnClick,
+        // lors de rotation, l'application pourra sauvegarder les données lors d'une seule rotation ! Pourqquoi ?
+        // Parce qu'à chauque rotation, on récupère et on affiche dans le layout le contenu de textViewNames précédent mais on réinitialise l'ArrayList,
+        // De ce fait, lors de la prochain rotation, l'ArrayList sera vide car elle vient d'etre réinitialisée !
+        textViewNames.add(tmpTextView.getText().toString());
+
     }
 }

@@ -19,13 +19,12 @@
         android:textStyle="bold" />
 
     <RelativeLayout
-        android:id="@+id/bigLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textview">
 
         <RelativeLayout
-            android:id="@+id/firstRelativeLayout"
+            android:id="@+id/leftRelativeLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -51,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginLeft="10dp"
-            android:layout_toEndOf="@+id/firstRelativeLayout">
+            android:layout_toEndOf="@+id/leftRelativeLayout">
 
             <LinearLayout
                 android:id="@+id/dynamicLayout"
