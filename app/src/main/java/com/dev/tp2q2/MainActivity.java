@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private boolean isEditTextEmpty() {
         if (editText.getText().toString().trim().isEmpty()) {
             editText.requestFocus();
-            editText.setError("Veuillez saisi un nom !");
+            editText.setError("Veuillez saisir un nom !");
             return true;
         }
         return false;
