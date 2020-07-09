@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // lors de rotation, l'application pourra sauvegarder les données lors d'une seule rotation ! Pourqquoi ?
         // Parce qu'à chauque rotation, on récupère et on affiche dans le layout le contenu de textViewNames précédent mais on réinitialise l'ArrayList,
         // De ce fait, lors de la prochain rotation, l'ArrayList sera vide car elle vient d'etre réinitialisée !
+        // Plus précisement, le contenu qui sera sauvegardé lors de la rotation est uniquement ce qui est ajouté au dynamicLayout après la rotation mais pas tout son contenu
         textViewNames.add(tmpTextView.getText().toString());
-
     }
 }
